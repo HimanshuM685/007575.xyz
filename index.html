@@ -3,90 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site Map 1.0</title>
-  <meta name="description" content="A SunView-style sitemap of projects hosted on 007575.xyz subdomains." />
-  <meta name="theme-color" content="#000000" />
+  <title>007575.XYZ — INDEX</title>
+  <meta name="description" content="A duotone sitemap of prototypes and showcases hosted on 007575.xyz subdomains." />
+  <meta name="theme-color" content="#1F1FE6" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700;6..96,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ===================== DESKTOP ===================== -->
-  <div class="desktop" id="desktop">
+  <div class="scanlines" aria-hidden="true"></div>
 
-    <!-- ----- a couple of background "desktop icons" for flavor ----- -->
-    <div class="deskicon" style="top:22px;left:22px;">
-      <div class="deskicon-box">[]</div>
-      <span class="deskicon-label">Console</span>
-    </div>
-    <div class="deskicon" style="top:22px;left:104px;">
-      <div class="deskicon-box">DIR</div>
-      <span class="deskicon-label">files</span>
-    </div>
+  <!-- ===================== HEADER ===================== -->
+  <header class="masthead">
+    <nav class="mast-left">
+      <a href="#index">INDEX</a>
+      <a href="#index">PROJECTS</a>
+    </nav>
+    <a class="wordmark" href="https://007575.xyz">007575<span class="wm-tld">.XYZ</span></a>
+    <nav class="mast-right">
+      <a class="cta-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">SOURCE&nbsp;→</a>
+    </nav>
+  </header>
 
-    <!-- ===================== MAIN WINDOW ===================== -->
-    <div class="window" id="mainWindow">
-      <!-- title bar -->
-      <div class="titlebar">
-        <span class="title-text">Site Map 1.0</span>
-        <span class="title-buttons">
-          <button class="title-btn" id="invertBtn" type="button" title="Invert video">inv</button>
-          <span class="title-btn title-btn-static">[]</span>
-          <span class="title-btn title-btn-static">X</span>
-        </span>
-      </div>
+  <div class="rule rule-heavy"></div>
 
-      <!-- menu bar -->
-      <div class="menubar">
-        <span class="menu-item">File</span>
-        <span class="menu-item">View</span>
-        <span class="menu-item">Sort</span>
-        <span class="menu-item">Help</span>
-      </div>
+  <main>
+    <!-- ===================== HERO (Mode A) ===================== -->
+    <section class="hero">
+      <svg class="sunburst" viewBox="0 0 600 600" aria-hidden="true" preserveAspectRatio="xMidYMid slice"></svg>
 
-      <!-- content -->
-      <div class="content">
-        <p class="banner">PROJECTS HOSTED ON *.007575.xyz &mdash; SELECT A DESTINATION</p>
+      <p class="kicker">OPEN&nbsp;SANDBOX&nbsp;&bull;&nbsp;PROTOTYPES&nbsp;&bull;&nbsp;SHOWCASE</p>
 
-        <!-- toolbar: search + filters -->
-        <div class="toolbar">
-          <div class="field">
-            <label for="search">Search:</label>
-            <input type="text" id="search" autocomplete="off" spellcheck="false" />
-            <span class="caret" id="caret">_</span>
+      <h1 class="display">
+        A&nbsp;MAP&nbsp;OF<br />
+        EVERYTHING<br />
+        I&nbsp;BUILD
+      </h1>
+
+      <div class="hero-foot">
+        <p class="hero-body">
+          007575.XYZ&nbsp;IS&nbsp;MY&nbsp;LIVE&nbsp;SANDBOX.&nbsp;EACH&nbsp;PROTOTYPE&nbsp;SHIPS&nbsp;TO&nbsp;ITS&nbsp;OWN
+          SUBDOMAIN.&nbsp;SELECT&nbsp;A&nbsp;DESTINATION&nbsp;BELOW.
+        </p>
+
+        <!-- terminal block (Mode B card) -->
+        <div class="terminal">
+          <div class="terminal-tabs">
+            <span class="tab tab-active">SHELL</span>
+            <span class="tab">INDEX</span>
+            <button class="copy" id="copyBtn" type="button">COPY</button>
           </div>
-          <div class="filters" id="filters"></div>
+          <pre class="terminal-body"><span class="t-prompt">&gt;</span> ls -1 *.007575.xyz
+<span id="termList"></span></pre>
         </div>
+      </div>
+    </section>
 
-        <div class="rule"></div>
+    <div class="rule rule-heavy"></div>
 
-        <!-- icon grid -->
-        <div class="grid" id="grid" aria-live="polite"></div>
-        <p class="empty" id="empty" hidden>** No matching items **</p>
+    <!-- ===================== INDEX (projects) ===================== -->
+    <section class="index" id="index">
+      <div class="section-head">
+        <div class="sh-left">
+          <p class="kicker">// THE&nbsp;INDEX</p>
+          <h2 class="display section-title">PROJECTS</h2>
+        </div>
+        <div class="sh-right">
+          <span class="count-box"><span id="countNum">00</span>&nbsp;LIVE</span>
+          <div class="controls">
+            <input type="text" id="search" placeholder="SEARCH /" autocomplete="off" spellcheck="false" />
+            <div class="filters" id="filters"></div>
+          </div>
+        </div>
       </div>
 
-      <!-- status bar -->
-      <div class="statusbar">
-        <span id="statusLeft">0 items</span>
-        <span id="statusRight">--More--</span>
-      </div>
-    </div>
+      <div class="rule"></div>
 
-    <!-- ===================== ABOUT / FOOTER WINDOW ===================== -->
-    <div class="window window-small" id="aboutWindow">
-      <div class="titlebar">
-        <span class="title-text">readme</span>
-      </div>
-      <div class="content content-tight">
-        <p>&copy; <span id="year"></span> 007575.xyz</p>
-        <p class="dim">static / no tracking / html+css+js</p>
-        <p class="dim">press &nbsp;<span class="kbd">/</span>&nbsp; to search</p>
-      </div>
-    </div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+      <p class="empty" id="empty" hidden>—&nbsp;NO&nbsp;MATCHING&nbsp;ENTRIES&nbsp;—</p>
+    </section>
+  </main>
 
-  </div>
+  <div class="rule rule-heavy"></div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <span>&copy;&nbsp;<span id="year"></span>&nbsp;007575.XYZ</span>
+    <span class="foot-mid">OPEN&nbsp;SOURCE&nbsp;&bull;&nbsp;NO&nbsp;TRACKING</span>
+    <span>HTML&nbsp;/&nbsp;CSS&nbsp;/&nbsp;JS</span>
+  </footer>
 
   <script src="projects.js"></script>
   <script src="script.js"></script>
