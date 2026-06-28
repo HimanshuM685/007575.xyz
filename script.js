@@ -7,7 +7,10 @@
   var grid = document.getElementById("grid");
   var empty = document.getElementById("empty");
   var search = document.getElementById("search");
+  var caret = document.getElementById("caret");
   var filtersEl = document.getElementById("filters");
+  var statusLeft = document.getElementById("statusLeft");
+  var statusRight = document.getElementById("statusRight");
 
   var activeTag = "all";
   var query = "";
@@ -17,43 +20,9 @@
   }
 
   function statusLabel(status) {
-    if (status === "wip") return "WIP";
-    if (status === "paused") return "Paused";
-    return "Live";
-  }
-
-  // ---- build the card -----------------------------------------------------
-  function cardFor(p) {
-    var a = document.createElement("a");
-    a.className = "card";
-    a.href = urlFor(p);
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    a.setAttribute("data-status", p.status || "live");
-    if (p.accent) a.style.setProperty("--accent", p.accent);
-
-    var host = p.subdomain + "." + ROOT_DOMAIN;
-
-    a.innerHTML =
-      '<div class="card-top">' +
-        '<div class="card-icon">' + (p.emoji || "▸") + "</div>" +
-        '<span class="badge badge-' + (p.status || "live") + '">' +
-          '<span class="badge-dot"></span>' + statusLabel(p.status) +
-        "</span>" +
-      "</div>" +
-      '<h2 class="card-name">' + escapeHtml(p.name) + "</h2>" +
-      '<p class="card-tagline">' + escapeHtml(p.tagline || "") + "</p>" +
-      '<div class="card-tags">' +
-        (p.tags || []).map(function (t) {
-          return '<span class="tag">' + escapeHtml(t) + "</span>";
-        }).join("") +
-      "</div>" +
-      '<div class="card-foot">' +
-        '<span class="card-host">' + escapeHtml(host) + "</span>" +
-        '<span class="card-go">visit ↗</span>' +
-      "</div>";
-
-    return a;
+    if (status === "wip") return "[ WIP ]";
+    if (status === "paused") return "[PAUSED]";
+    return "[ LIVE ]";
   }
 
   function escapeHtml(s) {
@@ -64,7 +33,34 @@
       .replace(/"/g, "&quot;");
   }
 
-  // ---- filtering ----------------------------------------------------------
+  // ---- build one icon ------------------------------------------------------
+  function iconFor(p) {
+    var a = document.createElement("a");
+    a.className = "icon";
+    a.href = urlFor(p);
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+
+    var host = p.subdomain + "." + ROOT_DOMAIN;
+
+    a.innerHTML =
+      '<div class="icon-head">' +
+        '<span class="icon-glyph">' + escapeHtml(p.glyph || "*") + "</span>" +
+        "<span>" +
+          '<span class="icon-name">' + escapeHtml(p.name) + "</span>" +
+          '<div class="icon-status">' + statusLabel(p.status) + "</div>" +
+        "</span>" +
+      "</div>" +
+      '<div class="icon-tagline">' + escapeHtml(p.tagline || "") + "</div>" +
+      '<div class="icon-foot">' +
+        '<span class="icon-host">' + escapeHtml(host) + "</span>" +
+        '<span class="icon-go">OPEN &gt;</span>' +
+      "</div>";
+
+    return a;
+  }
+
+  // ---- filtering -----------------------------------------------------------
   function matches(p) {
     if (activeTag !== "all" && (p.tags || []).indexOf(activeTag) === -1) {
       return false;
@@ -82,14 +78,19 @@
     var shown = 0;
     projects.forEach(function (p) {
       if (matches(p)) {
-        grid.appendChild(cardFor(p));
+        grid.appendChild(iconFor(p));
         shown++;
       }
     });
     empty.hidden = shown !== 0;
+
+    statusLeft.textContent =
+      shown + (shown === 1 ? " item" : " items") +
+      (shown !== projects.length ? " / " + projects.length : "");
+    statusRight.textContent = shown ? "--More--" : "** empty **";
   }
 
-  // ---- tag filter chips ---------------------------------------------------
+  // ---- tag filter chips ----------------------------------------------------
   function buildFilters() {
     var tags = { all: true };
     projects.forEach(function (p) {
@@ -100,7 +101,7 @@
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = "chip" + (t === "all" ? " chip-active" : "");
-      btn.textContent = t === "all" ? "All" : t;
+      btn.textContent = t === "all" ? "all" : t;
       btn.addEventListener("click", function () {
         activeTag = t;
         Array.prototype.forEach.call(
@@ -114,50 +115,32 @@
     });
   }
 
-  // ---- stats --------------------------------------------------------------
-  function fillStats() {
-    var total = projects.length;
-    var live = projects.filter(function (p) { return (p.status || "live") === "live"; }).length;
-    countUp(document.getElementById("statTotal"), total);
-    countUp(document.getElementById("statLive"), live);
+  // ---- fake terminal caret follows the text field --------------------------
+  function syncCaret() {
+    caret.textContent = "_";
+    caret.style.display = document.activeElement === search ? "" : "inline";
   }
 
-  function countUp(el, target) {
-    if (!el) return;
-    var start = 0;
-    var steps = Math.max(1, target);
-    var dur = 600;
-    var t0 = performance.now();
-    function tick(now) {
-      var prog = Math.min(1, (now - t0) / dur);
-      el.textContent = Math.round(prog * target);
-      if (prog < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
+  // ---- invert video toggle -------------------------------------------------
+  function initInvert() {
+    var btn = document.getElementById("invertBtn");
+    var desktop = document.getElementById("desktop");
+    if (!btn || !desktop) return;
+    if (localStorage.getItem("invert") === "1") desktop.classList.add("invert");
+    btn.addEventListener("click", function () {
+      desktop.classList.toggle("invert");
+      localStorage.setItem("invert", desktop.classList.contains("invert") ? "1" : "0");
+    });
   }
 
-  // ---- theme toggle -------------------------------------------------------
-  function initTheme() {
-    var toggle = document.getElementById("themeToggle");
-    var saved = localStorage.getItem("theme");
-    if (saved) document.documentElement.setAttribute("data-theme", saved);
-    if (toggle) {
-      toggle.addEventListener("click", function () {
-        var cur = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
-        var next = cur === "light" ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", next);
-        localStorage.setItem("theme", next);
-      });
-    }
-  }
-
-  // ---- search wiring ------------------------------------------------------
+  // ---- search wiring -------------------------------------------------------
   search.addEventListener("input", function () {
     query = search.value.trim().toLowerCase();
     render();
   });
+  search.addEventListener("focus", syncCaret);
+  search.addEventListener("blur", syncCaret);
 
-  // "/" focuses search
   document.addEventListener("keydown", function (e) {
     if (e.key === "/" && document.activeElement !== search) {
       e.preventDefault();
@@ -171,10 +154,10 @@
     }
   });
 
-  // ---- boot ---------------------------------------------------------------
+  // ---- boot ----------------------------------------------------------------
   document.getElementById("year").textContent = new Date().getFullYear();
-  initTheme();
+  initInvert();
   buildFilters();
-  fillStats();
   render();
+  syncCaret();
 })();

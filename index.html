@@ -3,70 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>007575.xyz — Project Sitemap</title>
-  <meta name="description" content="A sitemap of projects, prototypes and showcases hosted on 007575.xyz subdomains." />
-  <meta name="theme-color" content="#0b0d12" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="007575.xyz — Project Sitemap" />
-  <meta property="og:description" content="Prototypes & showcases hosted on 007575.xyz subdomains." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://007575.xyz" />
+  <title>Site Map 1.0</title>
+  <meta name="description" content="A SunView-style sitemap of projects hosted on 007575.xyz subdomains." />
+  <meta name="theme-color" content="#000000" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-glow" aria-hidden="true"></div>
+  <!-- ===================== DESKTOP ===================== -->
+  <div class="desktop" id="desktop">
 
-  <header class="site-header">
-    <div class="brand">
-      <span class="brand-dot"></span>
-      <a href="https://007575.xyz" class="brand-name">007575<span class="brand-tld">.xyz</span></a>
+    <!-- ----- a couple of background "desktop icons" for flavor ----- -->
+    <div class="deskicon" style="top:22px;left:22px;">
+      <div class="deskicon-box">[]</div>
+      <span class="deskicon-label">Console</span>
     </div>
-    <nav class="header-actions">
-      <a class="ghost-btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-      <button class="ghost-btn" id="themeToggle" type="button" aria-label="Toggle theme">◐</button>
-    </nav>
-  </header>
+    <div class="deskicon" style="top:22px;left:104px;">
+      <div class="deskicon-box">DIR</div>
+      <span class="deskicon-label">files</span>
+    </div>
 
-  <main class="container">
-    <section class="hero">
-      <p class="eyebrow">// project sitemap</p>
-      <h1>A map of everything I'm building.</h1>
-      <p class="subtitle">
-        I use <strong>007575.xyz</strong> to prototype and showcase projects. Each one lives on
-        its own subdomain. Pick a destination below.
-      </p>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num" id="statTotal">0</span><span class="stat-label">projects</span></div>
-        <div class="stat"><span class="stat-num" id="statLive">0</span><span class="stat-label">live</span></div>
-        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">ideas</span></div>
+    <!-- ===================== MAIN WINDOW ===================== -->
+    <div class="window" id="mainWindow">
+      <!-- title bar -->
+      <div class="titlebar">
+        <span class="title-text">Site Map 1.0</span>
+        <span class="title-buttons">
+          <button class="title-btn" id="invertBtn" type="button" title="Invert video">inv</button>
+          <span class="title-btn title-btn-static">[]</span>
+          <span class="title-btn title-btn-static">X</span>
+        </span>
       </div>
-    </section>
 
-    <section class="controls">
-      <div class="search-wrap">
-        <span class="search-icon">⌕</span>
-        <input type="search" id="search" placeholder="Search projects…" autocomplete="off" spellcheck="false" />
-        <kbd class="search-kbd">/</kbd>
+      <!-- menu bar -->
+      <div class="menubar">
+        <span class="menu-item">File</span>
+        <span class="menu-item">View</span>
+        <span class="menu-item">Sort</span>
+        <span class="menu-item">Help</span>
       </div>
-      <div class="filters" id="filters"></div>
-    </section>
 
-    <section class="grid" id="grid" aria-live="polite"></section>
+      <!-- content -->
+      <div class="content">
+        <p class="banner">PROJECTS HOSTED ON *.007575.xyz &mdash; SELECT A DESTINATION</p>
 
-    <p class="empty" id="empty" hidden>No projects match that search.</p>
-  </main>
+        <!-- toolbar: search + filters -->
+        <div class="toolbar">
+          <div class="field">
+            <label for="search">Search:</label>
+            <input type="text" id="search" autocomplete="off" spellcheck="false" />
+            <span class="caret" id="caret">_</span>
+          </div>
+          <div class="filters" id="filters"></div>
+        </div>
 
-  <footer class="site-footer">
-    <span>© <span id="year"></span> 007575.xyz</span>
-    <span class="footer-sep">·</span>
-    <span>static · no tracking · built with html, css &amp; js</span>
-  </footer>
+        <div class="rule"></div>
+
+        <!-- icon grid -->
+        <div class="grid" id="grid" aria-live="polite"></div>
+        <p class="empty" id="empty" hidden>** No matching items **</p>
+      </div>
+
+      <!-- status bar -->
+      <div class="statusbar">
+        <span id="statusLeft">0 items</span>
+        <span id="statusRight">--More--</span>
+      </div>
+    </div>
+
+    <!-- ===================== ABOUT / FOOTER WINDOW ===================== -->
+    <div class="window window-small" id="aboutWindow">
+      <div class="titlebar">
+        <span class="title-text">readme</span>
+      </div>
+      <div class="content content-tight">
+        <p>&copy; <span id="year"></span> 007575.xyz</p>
+        <p class="dim">static / no tracking / html+css+js</p>
+        <p class="dim">press &nbsp;<span class="kbd">/</span>&nbsp; to search</p>
+      </div>
+    </div>
+
+  </div>
 
   <script src="projects.js"></script>
   <script src="script.js"></script>

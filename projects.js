@@ -1,15 +1,14 @@
 /**
- * Project registry for the 007575.xyz sitemap.
+ * Project registry for the 007575.xyz sitemap (SunView edition).
  * ---------------------------------------------------------------------------
- * To add a project: copy a block, change the fields. That's it.
+ * To add a project: copy a block, change the fields.
  *
  *   subdomain  – the part before .007575.xyz (used to build the URL + label)
  *   name       – display name
  *   tagline    – one-line description
  *   tags       – array of strings used for filtering
- *   status     – "live" | "wip" | "paused"  (affects the badge)
- *   accent     – any CSS color; tints the card. Optional.
- *   emoji      – shown in the card icon. Optional.
+ *   status     – "live" | "wip" | "paused"
+ *   glyph      – 1–2 char pixel glyph shown in the icon box. Optional.
  */
 window.PROJECTS = [
   {
@@ -18,8 +17,7 @@ window.PROJECTS = [
     tagline: "Block out distractions and focus on what matters.",
     tags: ["productivity", "web"],
     status: "live",
-    accent: "#6c8cff",
-    emoji: "🧱",
+    glyph: "#",
   },
   {
     subdomain: "pigeon",
@@ -27,8 +25,7 @@ window.PROJECTS = [
     tagline: "Lightweight messaging / delivery experiment.",
     tags: ["messaging", "web"],
     status: "live",
-    accent: "#46d3a5",
-    emoji: "🐦",
+    glyph: ">>",
   },
   {
     subdomain: "timevault",
@@ -36,7 +33,6 @@ window.PROJECTS = [
     tagline: "Capture time, lock away memories and moments.",
     tags: ["utility", "web"],
     status: "live",
-    accent: "#f5a25d",
-    emoji: "⏳",
+    glyph: "@",
   },
 ];
