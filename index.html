@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>007575.xyz — Project Sitemap</title>
+  <meta name="description" content="A sitemap of projects, prototypes and showcases hosted on 007575.xyz subdomains." />
+  <meta name="theme-color" content="#0b0d12" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="007575.xyz — Project Sitemap" />
+  <meta property="og:description" content="Prototypes & showcases hosted on 007575.xyz subdomains." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://007575.xyz" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <a href="https://007575.xyz" class="brand-name">007575<span class="brand-tld">.xyz</span></a>
+    </div>
+    <nav class="header-actions">
+      <a class="ghost-btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <button class="ghost-btn" id="themeToggle" type="button" aria-label="Toggle theme">◐</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">// project sitemap</p>
+      <h1>A map of everything I'm building.</h1>
+      <p class="subtitle">
+        I use <strong>007575.xyz</strong> to prototype and showcase projects. Each one lives on
+        its own subdomain. Pick a destination below.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" id="statTotal">0</span><span class="stat-label">projects</span></div>
+        <div class="stat"><span class="stat-num" id="statLive">0</span><span class="stat-label">live</span></div>
+        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">ideas</span></div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="search" id="search" placeholder="Search projects…" autocomplete="off" spellcheck="false" />
+        <kbd class="search-kbd">/</kbd>
+      </div>
+      <div class="filters" id="filters"></div>
+    </section>
+
+    <section class="grid" id="grid" aria-live="polite"></section>
+
+    <p class="empty" id="empty" hidden>No projects match that search.</p>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> 007575.xyz</span>
+    <span class="footer-sep">·</span>
+    <span>static · no tracking · built with html, css &amp; js</span>
+  </footer>
+
+  <script src="projects.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
