@@ -76,23 +76,6 @@
     return s + "</svg>";
   }
 
-  // ---- hero sunburst (cream radiating strokes) ----------------------------
-  function buildSunburst() {
-    var el = document.querySelector(".sunburst");
-    if (!el) return;
-    var cx = 300, cy = 300, parts = "", i, a;
-    for (i = 0; i < 72; i++) {
-      a = (i / 72) * Math.PI * 2;
-      parts += '<line x1="' + cx + '" y1="' + cy +
-               '" x2="' + (cx + Math.cos(a) * 460) + '" y2="' + (cy + Math.sin(a) * 460) +
-               '" stroke="currentColor" stroke-width="' + (i % 3 === 0 ? 1.4 : 0.6) + '"/>';
-    }
-    parts += '<circle cx="300" cy="300" r="40" fill="none" stroke="currentColor" stroke-width="1.4"/>';
-    parts += '<circle cx="300" cy="300" r="70" fill="none" stroke="currentColor" stroke-width="0.6"/>';
-    el.innerHTML = parts;
-    el.style.color = "var(--cream)";
-  }
-
   // ---- card ----------------------------------------------------------------
   function cardFor(p, idx) {
     var a = document.createElement("a");
@@ -201,7 +184,6 @@
 
   // ---- boot ----------------------------------------------------------------
   document.getElementById("year").textContent = new Date().getFullYear();
-  buildSunburst();
   buildFilters();
   fillTerminal();
   render();
