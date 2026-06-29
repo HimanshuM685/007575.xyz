@@ -35,4 +35,20 @@ window.PROJECTS = [
     status: "live",
     motif: "sun",
   },
+  {
+    subdomain: "kuma",
+    name: "Kuma",
+    tagline: "Uptime & status monitoring at a glance.",
+    tags: ["monitoring", "web"],
+    status: "live",
+    motif: "eye",
+  },
+  {
+    subdomain: "tendril",
+    name: "Tendril",
+    tagline: "Connected threads, branching experiments.",
+    tags: ["utility", "web"],
+    status: "live",
+    motif: "orbit",
+  },
 ];
