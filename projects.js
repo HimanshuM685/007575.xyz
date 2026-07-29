@@ -28,14 +28,6 @@ window.PROJECTS = [
     motif: "orbit",
   },
   {
-    subdomain: "timevault",
-    name: "TimeVault",
-    tagline: "Capture time. Lock away moments.",
-    tags: ["utility", "web"],
-    status: "live",
-    motif: "sun",
-  },
-  {
     subdomain: "kuma",
     name: "Kuma",
     tagline: "Uptime & status monitoring at a glance.",

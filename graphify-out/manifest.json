@@ -1,0 +1,32 @@
+{
+  "/Users/fusion/Code/GitRepos/007575.xyz/.claude/settings.local.json": {
+    "mtime": 1782700219.2683594,
+    "ast_hash": "3c03f54125896edf88583711cf8d059e",
+    "semantic_hash": "3c03f54125896edf88583711cf8d059e"
+  },
+  "/Users/fusion/Code/GitRepos/007575.xyz/projects.js": {
+    "mtime": 1784567587.680031,
+    "ast_hash": "3578b3a20987e35b8fbc84f62774b19d",
+    "semantic_hash": "3578b3a20987e35b8fbc84f62774b19d"
+  },
+  "/Users/fusion/Code/GitRepos/007575.xyz/script.js": {
+    "mtime": 1782700949.7522163,
+    "ast_hash": "8af6fbf5b695ca0b9c9456d74d91fb7a",
+    "semantic_hash": "8af6fbf5b695ca0b9c9456d74d91fb7a"
+  },
+  "/Users/fusion/Code/GitRepos/007575.xyz/README.md": {
+    "mtime": 1782640102.8576002,
+    "ast_hash": "a2b1b330d76ea10f8765fb400d7bc699",
+    "semantic_hash": "a2b1b330d76ea10f8765fb400d7bc699"
+  },
+  "/Users/fusion/Code/GitRepos/007575.xyz/index.html": {
+    "mtime": 1782700422.6938257,
+    "ast_hash": "cd132b85210ecb127ca5912c12e3fef0",
+    "semantic_hash": "cd132b85210ecb127ca5912c12e3fef0"
+  },
+  "/Users/fusion/Code/GitRepos/007575.xyz/img/hero-art.jpg": {
+    "mtime": 1782700221.3459551,
+    "ast_hash": "3067bab342d3f0f408b7dc0df87c24ef",
+    "semantic_hash": "3067bab342d3f0f408b7dc0df87c24ef"
+  }
+}
