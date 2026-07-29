@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOCS — 007575.XYZ</title>
+  <meta name="description" content="How 007575.xyz works and how to add a new project subdomain." />
+  <meta name="theme-color" content="#007575" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700;6..96,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <nav class="mast-left">
+      <a href="index.html#index">PROJECTS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="docs.html">DOCS</a>
+    </nav>
+    <a class="wordmark" href="https://007575.xyz">007575<span class="wm-tld">.XYZ</span></a>
+    <nav class="mast-right">
+      <a class="cta-link" href="https://github.com/HimanshuM685/007575.xyz" target="_blank" rel="noopener noreferrer">SOURCE&nbsp;→</a>
+    </nav>
+  </header>
+
+  <div class="rule rule-heavy"></div>
+
+  <main>
+    <section class="index">
+      <div class="section-head">
+        <div class="sh-left">
+          <p class="kicker">// HOW&nbsp;IT&nbsp;WORKS</p>
+          <h1 class="display section-title">DOCS</h1>
+        </div>
+      </div>
+
+      <div class="rule"></div>
+
+      <table class="doc-table" style="margin-top: 28px;">
+        <tbody>
+          <tr><th>index.html</th><td>Page markup</td></tr>
+          <tr><th>styles.css</th><td>All styling</td></tr>
+          <tr><th>projects.js</th><td>The data&nbsp;— edit this to add/remove projects</td></tr>
+          <tr><th>script.js</th><td>Rendering, search, tag filters, stats</td></tr>
+        </tbody>
+      </table>
+
+      <p class="kicker" style="margin-top: 40px; margin-bottom: 12px;">// ADDING&nbsp;A&nbsp;PROJECT</p>
+      <div class="terminal">
+        <div class="terminal-tabs">
+          <span class="tab tab-active">PROJECTS.JS</span>
+        </div>
+        <pre class="terminal-body">{
+  subdomain: "myapp",        <span class="doc-comment">// &rarr; myapp.007575.xyz</span>
+  name: "My App",
+  tagline: "One line about it.",
+  tags: ["web", "tool"],     <span class="doc-comment">// powers the filter chips</span>
+  status: "live",            <span class="doc-comment">// "live" | "wip" | "paused"</span>
+  accent: "#6c8cff",         <span class="doc-comment">// optional card tint</span>
+  emoji: "&#128640;",        <span class="doc-comment">// optional icon</span>
+}</pre>
+      </div>
+
+      <p class="kicker" style="margin-top: 40px; margin-bottom: 12px;">// RUN&nbsp;LOCALLY</p>
+      <div class="terminal">
+        <div class="terminal-tabs">
+          <span class="tab tab-active">SHELL</span>
+        </div>
+        <pre class="terminal-body"><span class="t-prompt">&gt;</span> python3 -m http.server 8000
+<span class="doc-comment"># &rarr; http://localhost:8000</span></pre>
+      </div>
+
+      <p class="hero-body" style="max-width: 68ch; margin-top: 40px;">
+        FEATURES:&nbsp;LIVE&nbsp;SEARCH&nbsp;(PRESS&nbsp;/&nbsp;TO&nbsp;FOCUS,&nbsp;ESC&nbsp;TO&nbsp;CLEAR),
+        TAG&nbsp;FILTERING,&nbsp;RESPONSIVE&nbsp;GRID,&nbsp;AND&nbsp;RESPECT&nbsp;FOR
+        PREFERS-REDUCED-MOTION.
+      </p>
+    </section>
+  </main>
+
+  <div class="rule rule-heavy"></div>
+
+  <footer class="footer">
+    <span>&copy;&nbsp;<span id="year"></span>&nbsp;007575.XYZ</span>
+    <span class="foot-mid">OPEN&nbsp;SOURCE&nbsp;&bull;&nbsp;NO&nbsp;TRACKING</span>
+    <span>HTML&nbsp;/&nbsp;CSS&nbsp;/&nbsp;JS</span>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
