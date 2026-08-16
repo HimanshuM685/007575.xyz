@@ -1,84 +1,95 @@
-# Graph Report - .  (2026-07-20)
+# Graph Report - .  (2026-07-30)
 
 ## Corpus Check
-- 1 files · ~13,508 words
-- Verdict: corpus is large enough that graph structure adds value.
+- Corpus is ~13,902 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 29 nodes · 42 edges · 6 communities
-- Extraction: 81% EXTRACTED · 19% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.84)
-- Token cost: 0 input · 0 output
+- 45 nodes · 68 edges · 9 communities (7 shown, 2 thin omitted)
+- Extraction: 81% EXTRACTED · 19% INFERRED · 0% AMBIGUOUS · INFERRED: 13 edges (avg confidence: 0.83)
+- Token cost: 0 input · 55,971 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Rendering & Interaction Logic|Rendering & Interaction Logic]]
-- [[_COMMUNITY_Hermes Hero Artwork|Hermes Hero Artwork]]
-- [[_COMMUNITY_Page Markup & Data Model|Page Markup & Data Model]]
-- [[_COMMUNITY_Search & Filtering|Search & Filtering]]
-- [[_COMMUNITY_Static Site Foundation|Static Site Foundation]]
+- [[_COMMUNITY_Rendering Helper Functions|Rendering Helper Functions]]
+- [[_COMMUNITY_README Documentation|README Documentation]]
+- [[_COMMUNITY_Docs Page Feature Reference|Docs Page Feature Reference]]
+- [[_COMMUNITY_Project Grid Filtering|Project Grid Filtering]]
+- [[_COMMUNITY_Hero Art Engraving|Hero Art Engraving]]
+- [[_COMMUNITY_About Page Site Identity|About Page Site Identity]]
+- [[_COMMUNITY_Live Search|Live Search]]
+- [[_COMMUNITY_Hero Terminal UI|Hero Terminal UI]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `index.html Page Markup` - 8 edges
-2. `cardFor()` - 6 edges
-3. `007575.xyz Static Sitemap` - 5 edges
-4. `projects.js Project Data` - 5 edges
-5. `render()` - 4 edges
-6. `script.js Rendering & Interaction Logic` - 4 edges
-7. `Hero Art Image` - 4 edges
-8. `pad2()` - 3 edges
-9. `Multi-Armed Winged Figure` - 3 edges
-10. `urlFor()` - 2 edges
+1. `DOCS Page` - 11 edges
+2. `INDEX / Home Page` - 8 edges
+3. `ABOUT Page` - 7 edges
+4. `cardFor()` - 6 edges
+5. `script.js (Rendering, Search, Tag Filters, Stats)` - 5 edges
+6. `styles.css (All Styling)` - 5 edges
+7. `render()` - 4 edges
+8. `007575.xyz Static Sitemap` - 4 edges
+9. `Hero Art Image` - 4 edges
+10. `projects.js (Project Data Module)` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Projects Index Grid` --shares_data_with--> `projects.js Project Data`  [INFERRED]
-  index.html → README.md
-- `index.html Page Markup` --references--> `styles.css Styling`  [EXTRACTED]
-  index.html → README.md
-- `007575.xyz Static Sitemap` --references--> `index.html Page Markup`  [EXTRACTED]
-  README.md → index.html
-- `index.html Page Markup` --references--> `script.js Rendering & Interaction Logic`  [EXTRACTED]
-  index.html → README.md
-- `Terminal Shell Listing Block` --conceptually_related_to--> `Subdomain URL Convention`  [INFERRED]
-  index.html → README.md
+- `ABOUT Page` --references--> `DOCS Page`  [EXTRACTED]
+  about.html → docs.html
+- `ABOUT Page` --references--> `INDEX / Home Page`  [EXTRACTED]
+  about.html → index.html
+- `ABOUT Page` --references--> `styles.css (All Styling)`  [EXTRACTED]
+  about.html → docs.html
+- `INDEX / Home Page` --references--> `Live Sandbox / No-Build, No-Framework, No-Tracking Philosophy`  [EXTRACTED]
+  index.html → about.html
+- `DOCS Page` --references--> `INDEX / Home Page`  [EXTRACTED]
+  docs.html → index.html
 
 ## Import Cycles
 - None detected.
 
-## Communities (6 total, 0 thin omitted)
+## Hyperedges (group relationships)
+- **Four-File No-Build Static Site Architecture** — index_html_page, readme_projects_js_data, readme_script_js_rendering, readme_styles_css [INFERRED 0.85]
+- **Shared Site Navigation (Masthead: PROJECTS / ABOUT / DOCS)** — about_about_page, docs_docs_page, index_index_page [EXTRACTED 1.00]
+- **No-Framework Static Stack (styles.css, projects.js, script.js on GitHub Pages)** — styles_styles_css, projects_projects_js, script_script_js, about_github_pages [INFERRED 0.85]
+- **Project Browsing System (search + tag filters over project data schema)** — index_search_input, index_filters_component, docs_project_entry_schema, projects_projects_js [INFERRED 0.75]
 
-### Community 0 - "Rendering & Interaction Logic"
+## Communities (9 total, 2 thin omitted)
+
+### Community 0 - "Rendering Helper Functions"
 Cohesion: 0.38
 Nodes (9): buildFilters(), cardFor(), emblem(), escapeHtml(), fillTerminal(), matches(), pad2(), render() (+1 more)
 
-### Community 1 - "Hermes Hero Artwork"
+### Community 1 - "README Documentation"
+Cohesion: 0.33
+Nodes (7): 007575.xyz Static Sitemap, Site Features (search, tag filter, theme, responsive), No Build Step / No Framework Principle, projects.js Project Data, script.js Rendering & Interaction Logic, styles.css Styling, Subdomain URL Convention
+
+### Community 2 - "Docs Page Feature Reference"
+Cohesion: 0.47
+Nodes (6): DOCS Page, Local Dev Server (python3 -m http.server), Project Entry Schema (subdomain, name, tagline, tags, status, accent, emoji), prefers-reduced-motion Support, Responsive Grid Feature, styles.css (All Styling)
+
+### Community 3 - "Project Grid Filtering"
+Cohesion: 0.53
+Nodes (6): Tag Filtering Feature, Tag Filter Chips (#filters), INDEX / Home Page, Projects Index Section / Grid, projects.js (Project Data Module), script.js (Rendering, Search, Tag Filters, Stats)
+
+### Community 4 - "Hero Art Engraving"
 Cohesion: 0.47
 Nodes (6): Blue-on-Black Engraving Aesthetic, Hero Art Image, Electric Lightning Background Field, Multi-Armed Winged Figure, Radiating Line Rays, Winged Helmet (Hermes/Mercury Motif)
 
-### Community 2 - "Page Markup & Data Model"
-Cohesion: 0.47
-Nodes (6): Duotone Editorial Visual Theme, Projects Index Grid, index.html Page Markup, Terminal Shell Listing Block, projects.js Project Data, Subdomain URL Convention
-
-### Community 3 - "Search & Filtering"
-Cohesion: 0.67
-Nodes (3): Search & Filter Controls, Site Features (search, tag filter, theme, responsive), script.js Rendering & Interaction Logic
-
-### Community 4 - "Static Site Foundation"
-Cohesion: 0.67
-Nodes (3): 007575.xyz Static Sitemap, No Build Step / No Framework Principle, styles.css Styling
+### Community 5 - "About Page Site Identity"
+Cohesion: 0.70
+Nodes (5): ABOUT Page, GitHub Pages (Host), Himanshu Malik, Live Sandbox / No-Build, No-Framework, No-Tracking Philosophy, 007575.xyz GitHub Repository (Source)
 
 ## Knowledge Gaps
-- **1 isolated node(s):** `Blue-on-Black Engraving Aesthetic`
+- **6 isolated node(s):** `styles.css Styling`, `Site Features (search, tag filter, theme, responsive)`, `Blue-on-Black Engraving Aesthetic`, `Project Entry Schema (subdomain, name, tagline, tags, status, accent, emoji)`, `Local Dev Server (python3 -m http.server)` (+1 more)
   These have ≤1 connection - possible missing edges or undocumented components.
+- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `index.html Page Markup` connect `Page Markup & Data Model` to `Search & Filtering`, `Static Site Foundation`?**
-  _High betweenness centrality (0.078) - this node is a cross-community bridge._
-- **Why does `007575.xyz Static Sitemap` connect `Static Site Foundation` to `Page Markup & Data Model`, `Search & Filtering`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
-- **Why does `projects.js Project Data` connect `Page Markup & Data Model` to `Search & Filtering`, `Static Site Foundation`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **Are the 2 inferred relationships involving `projects.js Project Data` (e.g. with `Projects Index Grid` and `script.js Rendering & Interaction Logic`) actually correct?**
-  _`projects.js Project Data` has 2 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `No Build Step / No Framework Principle`, `Duotone Editorial Visual Theme`, `Blue-on-Black Engraving Aesthetic` to the rest of the system?**
-  _3 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `DOCS Page` connect `Docs Page Feature Reference` to `Project Grid Filtering`, `About Page Site Identity`, `Live Search`?**
+  _High betweenness centrality (0.089) - this node is a cross-community bridge._
+- **Why does `INDEX / Home Page` connect `Project Grid Filtering` to `Docs Page Feature Reference`, `About Page Site Identity`, `Hero Terminal UI`?**
+  _High betweenness centrality (0.068) - this node is a cross-community bridge._
+- **Why does `ABOUT Page` connect `About Page Site Identity` to `Docs Page Feature Reference`, `Project Grid Filtering`?**
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+- **What connects `styles.css Styling`, `Subdomain URL Convention`, `No Build Step / No Framework Principle` to the rest of the system?**
+  _8 weakly-connected nodes found - possible documentation gaps or missing edges._

@@ -1,17 +1,85 @@
 {
   "directed": false,
   "multigraph": false,
-  "graph": {},
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "static_site_four_file_arch",
+        "label": "Four-File No-Build Static Site Architecture",
+        "nodes": [
+          "index_html_page",
+          "readme_projects_js_data",
+          "readme_script_js_rendering",
+          "readme_styles_css"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "/Users/fusion/Code/GitRepos/007575.xyz/README.md"
+      },
+      {
+        "id": "site_nav_pattern",
+        "label": "Shared Site Navigation (Masthead: PROJECTS / ABOUT / DOCS)",
+        "nodes": [
+          "about_about_page",
+          "docs_docs_page",
+          "index_index_page"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "/Users/fusion/Code/GitRepos/007575.xyz/index.html"
+      },
+      {
+        "id": "static_stack_architecture",
+        "label": "No-Framework Static Stack (styles.css, projects.js, script.js on GitHub Pages)",
+        "nodes": [
+          "styles_styles_css",
+          "projects_projects_js",
+          "script_script_js",
+          "about_github_pages"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "/Users/fusion/Code/GitRepos/007575.xyz/about.html"
+      },
+      {
+        "id": "project_browsing_system",
+        "label": "Project Browsing System (search + tag filters over project data schema)",
+        "nodes": [
+          "index_search_input",
+          "index_filters_component",
+          "docs_project_entry_schema",
+          "projects_projects_js"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.75,
+        "source_file": "/Users/fusion/Code/GitRepos/007575.xyz/docs.html"
+      }
+    ]
+  },
   "nodes": [
+    {
+      "label": "projects.js",
+      "file_type": "code",
+      "source_file": "projects.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "projects",
+      "community": 8,
+      "norm_label": "projects.js"
+    },
     {
       "label": "script.js",
       "file_type": "code",
       "source_file": "script.js",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "script",
       "community": 0,
-      "norm_label": "script.js",
-      "id": "script"
+      "norm_label": "script.js"
     },
     {
       "label": "urlFor()",
@@ -19,9 +87,9 @@
       "source_file": "script.js",
       "source_location": "L17",
       "_origin": "ast",
+      "id": "script_urlfor",
       "community": 0,
-      "norm_label": "urlfor()",
-      "id": "script_urlfor"
+      "norm_label": "urlfor()"
     },
     {
       "label": "pad2()",
@@ -29,9 +97,9 @@
       "source_file": "script.js",
       "source_location": "L18",
       "_origin": "ast",
+      "id": "script_pad2",
       "community": 0,
-      "norm_label": "pad2()",
-      "id": "script_pad2"
+      "norm_label": "pad2()"
     },
     {
       "label": "escapeHtml()",
@@ -39,9 +107,9 @@
       "source_file": "script.js",
       "source_location": "L20",
       "_origin": "ast",
+      "id": "script_escapehtml",
       "community": 0,
-      "norm_label": "escapehtml()",
-      "id": "script_escapehtml"
+      "norm_label": "escapehtml()"
     },
     {
       "label": "emblem()",
@@ -49,9 +117,9 @@
       "source_file": "script.js",
       "source_location": "L29",
       "_origin": "ast",
+      "id": "script_emblem",
       "community": 0,
-      "norm_label": "emblem()",
-      "id": "script_emblem"
+      "norm_label": "emblem()"
     },
     {
       "label": "cardFor()",
@@ -59,9 +127,9 @@
       "source_file": "script.js",
       "source_location": "L80",
       "_origin": "ast",
+      "id": "script_cardfor",
       "community": 0,
-      "norm_label": "cardfor()",
-      "id": "script_cardfor"
+      "norm_label": "cardfor()"
     },
     {
       "label": "matches()",
@@ -69,9 +137,9 @@
       "source_file": "script.js",
       "source_location": "L109",
       "_origin": "ast",
+      "id": "script_matches",
       "community": 0,
-      "norm_label": "matches()",
-      "id": "script_matches"
+      "norm_label": "matches()"
     },
     {
       "label": "render()",
@@ -79,9 +147,9 @@
       "source_file": "script.js",
       "source_location": "L116",
       "_origin": "ast",
+      "id": "script_render",
       "community": 0,
-      "norm_label": "render()",
-      "id": "script_render"
+      "norm_label": "render()"
     },
     {
       "label": "buildFilters()",
@@ -89,9 +157,9 @@
       "source_file": "script.js",
       "source_location": "L126",
       "_origin": "ast",
+      "id": "script_buildfilters",
       "community": 0,
-      "norm_label": "buildfilters()",
-      "id": "script_buildfilters"
+      "norm_label": "buildfilters()"
     },
     {
       "label": "fillTerminal()",
@@ -99,9 +167,9 @@
       "source_file": "script.js",
       "source_location": "L147",
       "_origin": "ast",
+      "id": "script_fillterminal",
       "community": 0,
-      "norm_label": "fillterminal()",
-      "id": "script_fillterminal"
+      "norm_label": "fillterminal()"
     },
     {
       "label": "007575.xyz Static Sitemap",
@@ -112,9 +180,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "007575.xyz static sitemap",
-      "id": "readme_007575_sitemap"
+      "id": "readme_007575_sitemap",
+      "community": 1,
+      "norm_label": "007575.xyz static sitemap"
     },
     {
       "label": "projects.js Project Data",
@@ -125,9 +193,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
-      "norm_label": "projects.js project data",
-      "id": "readme_projects_js_data"
+      "id": "readme_projects_js_data",
+      "community": 1,
+      "norm_label": "projects.js project data"
     },
     {
       "label": "script.js Rendering & Interaction Logic",
@@ -138,9 +206,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
-      "norm_label": "script.js rendering & interaction logic",
-      "id": "readme_script_js_rendering"
+      "id": "readme_script_js_rendering",
+      "community": 1,
+      "norm_label": "script.js rendering & interaction logic"
     },
     {
       "label": "styles.css Styling",
@@ -151,9 +219,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "styles.css styling",
-      "id": "readme_styles_css"
+      "id": "readme_styles_css",
+      "community": 1,
+      "norm_label": "styles.css styling"
     },
     {
       "label": "Subdomain URL Convention",
@@ -164,9 +232,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
-      "norm_label": "subdomain url convention",
-      "id": "readme_subdomain_convention"
+      "id": "readme_subdomain_convention",
+      "community": 1,
+      "norm_label": "subdomain url convention"
     },
     {
       "label": "No Build Step / No Framework Principle",
@@ -177,9 +245,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "no build step / no framework principle",
-      "id": "readme_no_build_step"
+      "id": "readme_no_build_step",
+      "community": 1,
+      "norm_label": "no build step / no framework principle"
     },
     {
       "label": "Site Features (search, tag filter, theme, responsive)",
@@ -190,74 +258,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
-      "norm_label": "site features (search, tag filter, theme, responsive)",
-      "id": "readme_features"
-    },
-    {
-      "label": "index.html Page Markup",
-      "file_type": "code",
-      "source_file": "index.html",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 2,
-      "norm_label": "index.html page markup",
-      "id": "index_html_page"
-    },
-    {
-      "label": "Terminal Shell Listing Block",
-      "file_type": "concept",
-      "source_file": "index.html",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 2,
-      "norm_label": "terminal shell listing block",
-      "id": "index_html_terminal_block"
-    },
-    {
-      "label": "Projects Index Grid",
-      "file_type": "concept",
-      "source_file": "index.html",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 2,
-      "norm_label": "projects index grid",
-      "id": "index_html_index_grid"
-    },
-    {
-      "label": "Search & Filter Controls",
-      "file_type": "concept",
-      "source_file": "index.html",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 3,
-      "norm_label": "search & filter controls",
-      "id": "index_html_search_filters"
-    },
-    {
-      "label": "Duotone Editorial Visual Theme",
-      "file_type": "rationale",
-      "source_file": "index.html",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 2,
-      "norm_label": "duotone editorial visual theme",
-      "id": "index_html_duotone_theme"
+      "id": "readme_features",
+      "community": 1,
+      "norm_label": "site features (search, tag filter, theme, responsive)"
     },
     {
       "label": "Hero Art Image",
@@ -268,9 +271,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "hero art image",
-      "id": "img_hero_art_image"
+      "id": "img_hero_art_image",
+      "community": 4,
+      "norm_label": "hero art image"
     },
     {
       "label": "Multi-Armed Winged Figure",
@@ -281,9 +284,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "multi-armed winged figure",
-      "id": "img_hero_art_multi_armed_figure"
+      "id": "img_hero_art_multi_armed_figure",
+      "community": 4,
+      "norm_label": "multi-armed winged figure"
     },
     {
       "label": "Winged Helmet (Hermes/Mercury Motif)",
@@ -294,9 +297,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "winged helmet (hermes/mercury motif)",
-      "id": "img_hero_art_winged_helmet"
+      "id": "img_hero_art_winged_helmet",
+      "community": 4,
+      "norm_label": "winged helmet (hermes/mercury motif)"
     },
     {
       "label": "Radiating Line Rays",
@@ -307,9 +310,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "radiating line rays",
-      "id": "img_hero_art_radiating_rays"
+      "id": "img_hero_art_radiating_rays",
+      "community": 4,
+      "norm_label": "radiating line rays"
     },
     {
       "label": "Electric Lightning Background Field",
@@ -320,9 +323,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "electric lightning background field",
-      "id": "img_hero_art_lightning_field"
+      "id": "img_hero_art_lightning_field",
+      "community": 4,
+      "norm_label": "electric lightning background field"
     },
     {
       "label": "Blue-on-Black Engraving Aesthetic",
@@ -333,19 +336,282 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "blue-on-black engraving aesthetic",
-      "id": "img_hero_art_blue_engraving_style"
+      "id": "img_hero_art_blue_engraving_style",
+      "community": 4,
+      "norm_label": "blue-on-black engraving aesthetic"
     },
     {
-      "label": "projects.js",
-      "file_type": "code",
-      "source_file": "projects.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "projects",
+      "label": "ABOUT Page",
+      "file_type": "document",
+      "source_file": "about.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "about_about_page",
       "community": 5,
-      "norm_label": "projects.js"
+      "norm_label": "about page"
+    },
+    {
+      "label": "Himanshu Malik",
+      "file_type": "concept",
+      "source_file": "about.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "about_himanshu_malik",
+      "community": 5,
+      "norm_label": "himanshu malik"
+    },
+    {
+      "label": "Live Sandbox / No-Build, No-Framework, No-Tracking Philosophy",
+      "file_type": "rationale",
+      "source_file": "about.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "about_live_sandbox_philosophy",
+      "community": 5,
+      "norm_label": "live sandbox / no-build, no-framework, no-tracking philosophy"
+    },
+    {
+      "label": "GitHub Pages (Host)",
+      "file_type": "concept",
+      "source_file": "about.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "about_github_pages",
+      "community": 5,
+      "norm_label": "github pages (host)"
+    },
+    {
+      "label": "007575.xyz GitHub Repository (Source)",
+      "file_type": "concept",
+      "source_file": "about.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "about_source_repo",
+      "community": 5,
+      "norm_label": "007575.xyz github repository (source)"
+    },
+    {
+      "label": "DOCS Page",
+      "file_type": "document",
+      "source_file": "docs.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_docs_page",
+      "community": 2,
+      "norm_label": "docs page"
+    },
+    {
+      "label": "Project Entry Schema (subdomain, name, tagline, tags, status, accent, emoji)",
+      "file_type": "concept",
+      "source_file": "docs.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_project_entry_schema",
+      "community": 2,
+      "norm_label": "project entry schema (subdomain, name, tagline, tags, status, accent, emoji)"
+    },
+    {
+      "label": "Local Dev Server (python3 -m http.server)",
+      "file_type": "concept",
+      "source_file": "docs.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_local_dev_server",
+      "community": 2,
+      "norm_label": "local dev server (python3 -m http.server)"
+    },
+    {
+      "label": "Live Search Feature (/ to focus, Esc to clear)",
+      "file_type": "concept",
+      "source_file": "docs.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_live_search_feature",
+      "community": 6,
+      "norm_label": "live search feature (/ to focus, esc to clear)"
+    },
+    {
+      "label": "Tag Filtering Feature",
+      "file_type": "concept",
+      "source_file": "docs.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_tag_filtering_feature",
+      "community": 3,
+      "norm_label": "tag filtering feature"
+    },
+    {
+      "label": "Responsive Grid Feature",
+      "file_type": "concept",
+      "source_file": "docs.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_responsive_grid_feature",
+      "community": 2,
+      "norm_label": "responsive grid feature"
+    },
+    {
+      "label": "prefers-reduced-motion Support",
+      "file_type": "concept",
+      "source_file": "docs.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_reduced_motion_feature",
+      "community": 2,
+      "norm_label": "prefers-reduced-motion support"
+    },
+    {
+      "label": "projects.js (Project Data Module)",
+      "file_type": "code",
+      "source_file": "docs.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "projects_projects_js",
+      "community": 3,
+      "norm_label": "projects.js (project data module)"
+    },
+    {
+      "label": "script.js (Rendering, Search, Tag Filters, Stats)",
+      "file_type": "code",
+      "source_file": "docs.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "script_script_js",
+      "community": 3,
+      "norm_label": "script.js (rendering, search, tag filters, stats)"
+    },
+    {
+      "label": "styles.css (All Styling)",
+      "file_type": "code",
+      "source_file": "docs.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "styles_styles_css",
+      "community": 2,
+      "norm_label": "styles.css (all styling)"
+    },
+    {
+      "label": "INDEX / Home Page",
+      "file_type": "document",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "index_index_page",
+      "community": 3,
+      "norm_label": "index / home page"
+    },
+    {
+      "label": "Hero Section (Mode A)",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "index_hero_section",
+      "community": 7,
+      "norm_label": "hero section (mode a)"
+    },
+    {
+      "label": "Terminal Block (ls *.007575.xyz, copy button)",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "index_terminal_block",
+      "community": 7,
+      "norm_label": "terminal block (ls *.007575.xyz, copy button)"
+    },
+    {
+      "label": "Projects Index Section / Grid",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "index_projects_section",
+      "community": 3,
+      "norm_label": "projects index section / grid"
+    },
+    {
+      "label": "Search Input (#search)",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "index_search_input",
+      "community": 6,
+      "norm_label": "search input (#search)"
+    },
+    {
+      "label": "Tag Filter Chips (#filters)",
+      "file_type": "concept",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "index_filters_component",
+      "community": 3,
+      "norm_label": "tag filter chips (#filters)"
     }
   ],
   "links": [
@@ -355,9 +621,9 @@
       "source_file": "script.js",
       "source_location": "L126",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script",
-      "target": "script_buildfilters"
+      "target": "script_buildfilters",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -365,9 +631,9 @@
       "source_file": "script.js",
       "source_location": "L80",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script",
-      "target": "script_cardfor"
+      "target": "script_cardfor",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -375,9 +641,9 @@
       "source_file": "script.js",
       "source_location": "L29",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script",
-      "target": "script_emblem"
+      "target": "script_emblem",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -385,9 +651,9 @@
       "source_file": "script.js",
       "source_location": "L20",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script",
-      "target": "script_escapehtml"
+      "target": "script_escapehtml",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -395,9 +661,9 @@
       "source_file": "script.js",
       "source_location": "L147",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script",
-      "target": "script_fillterminal"
+      "target": "script_fillterminal",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -405,9 +671,9 @@
       "source_file": "script.js",
       "source_location": "L109",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script",
-      "target": "script_matches"
+      "target": "script_matches",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -415,9 +681,9 @@
       "source_file": "script.js",
       "source_location": "L18",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script",
-      "target": "script_pad2"
+      "target": "script_pad2",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -425,9 +691,9 @@
       "source_file": "script.js",
       "source_location": "L116",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script",
-      "target": "script_render"
+      "target": "script_render",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -435,9 +701,9 @@
       "source_file": "script.js",
       "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script",
-      "target": "script_urlfor"
+      "target": "script_urlfor",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -446,9 +712,9 @@
       "source_file": "script.js",
       "source_location": "L83",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script_cardfor",
-      "target": "script_urlfor"
+      "target": "script_urlfor",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -457,9 +723,9 @@
       "source_file": "script.js",
       "source_location": "L94",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script_cardfor",
-      "target": "script_pad2"
+      "target": "script_pad2",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -468,9 +734,9 @@
       "source_file": "script.js",
       "source_location": "L153",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script_fillterminal",
-      "target": "script_pad2"
+      "target": "script_pad2",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -479,9 +745,9 @@
       "source_file": "script.js",
       "source_location": "L94",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script_cardfor",
-      "target": "script_escapehtml"
+      "target": "script_escapehtml",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -490,9 +756,9 @@
       "source_file": "script.js",
       "source_location": "L97",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script_cardfor",
-      "target": "script_emblem"
+      "target": "script_emblem",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -501,9 +767,9 @@
       "source_file": "script.js",
       "source_location": "L120",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script_render",
-      "target": "script_cardfor"
+      "target": "script_cardfor",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -512,9 +778,9 @@
       "source_file": "script.js",
       "source_location": "L120",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script_render",
-      "target": "script_matches"
+      "target": "script_matches",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -523,19 +789,9 @@
       "source_file": "script.js",
       "source_location": "L140",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "script_buildfilters",
-      "target": "script_render"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_007575_sitemap",
-      "target": "index_html_page"
+      "target": "script_render",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -581,26 +837,6 @@
       "relation": "shares_data_with",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_html_index_grid",
-      "target": "readme_projects_js_data"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_html_page",
-      "target": "readme_projects_js_data"
-    },
-    {
-      "relation": "shares_data_with",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
       "source_file": "README.md",
       "source_location": null,
       "weight": 1.0,
@@ -618,16 +854,6 @@
       "target": "readme_projects_js_data"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_html_page",
-      "target": "readme_script_js_rendering"
-    },
-    {
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
@@ -636,76 +862,6 @@
       "weight": 1.0,
       "source": "readme_features",
       "target": "readme_script_js_rendering"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_html_page",
-      "target": "readme_styles_css"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.75,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_html_terminal_block",
-      "target": "readme_subdomain_convention"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_html_search_filters",
-      "target": "readme_features"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_html_duotone_theme",
-      "target": "index_html_page"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_html_page",
-      "target": "index_html_index_grid"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_html_page",
-      "target": "index_html_search_filters"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_html_page",
-      "target": "index_html_terminal_block"
     },
     {
       "relation": "references",
@@ -776,8 +932,434 @@
       "weight": 1.0,
       "source": "img_hero_art_winged_helmet",
       "target": "img_hero_art_radiating_rays"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "about.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "about_about_page",
+      "target": "about_github_pages"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "about.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "about_about_page",
+      "target": "about_himanshu_malik"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "about.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "about_about_page",
+      "target": "about_live_sandbox_philosophy"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "about.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "about_about_page",
+      "target": "about_source_repo"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "about.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "about_about_page",
+      "target": "docs_docs_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "about.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "about_about_page",
+      "target": "index_index_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "about.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "about_about_page",
+      "target": "styles_styles_css"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "about.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "about_himanshu_malik",
+      "target": "about_source_repo"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "about.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "about_live_sandbox_philosophy",
+      "target": "about_github_pages"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_index_page",
+      "target": "about_live_sandbox_philosophy"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "about.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "about_source_repo",
+      "target": "about_github_pages"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_docs_page",
+      "target": "docs_live_search_feature"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_docs_page",
+      "target": "docs_local_dev_server"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_docs_page",
+      "target": "docs_project_entry_schema"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_docs_page",
+      "target": "docs_reduced_motion_feature"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_docs_page",
+      "target": "docs_responsive_grid_feature"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_docs_page",
+      "target": "docs_tag_filtering_feature"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_docs_page",
+      "target": "index_index_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_docs_page",
+      "target": "projects_projects_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_docs_page",
+      "target": "script_script_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_docs_page",
+      "target": "styles_styles_css"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_search_input",
+      "target": "docs_live_search_feature"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "script_script_js",
+      "target": "docs_live_search_feature"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_filters_component",
+      "target": "docs_tag_filtering_feature"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "script_script_js",
+      "target": "docs_tag_filtering_feature"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "styles_styles_css",
+      "target": "docs_responsive_grid_feature"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "styles_styles_css",
+      "target": "docs_reduced_motion_feature"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_index_page",
+      "target": "projects_projects_js"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_projects_section",
+      "target": "projects_projects_js"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "script_script_js",
+      "target": "projects_projects_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_index_page",
+      "target": "script_script_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_index_page",
+      "target": "styles_styles_css"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_index_page",
+      "target": "index_hero_section"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_index_page",
+      "target": "index_projects_section"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_hero_section",
+      "target": "index_terminal_block"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_projects_section",
+      "target": "index_filters_component"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_projects_section",
+      "target": "index_search_input"
     }
   ],
-  "hyperedges": [],
-  "built_at_commit": "44c09f94cb079da42f34ebe1f618c6e9bd59f1e6"
+  "hyperedges": [
+    {
+      "id": "static_site_four_file_arch",
+      "label": "Four-File No-Build Static Site Architecture",
+      "nodes": [
+        "index_html_page",
+        "readme_projects_js_data",
+        "readme_script_js_rendering",
+        "readme_styles_css"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/fusion/Code/GitRepos/007575.xyz/README.md"
+    },
+    {
+      "id": "site_nav_pattern",
+      "label": "Shared Site Navigation (Masthead: PROJECTS / ABOUT / DOCS)",
+      "nodes": [
+        "about_about_page",
+        "docs_docs_page",
+        "index_index_page"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/fusion/Code/GitRepos/007575.xyz/index.html"
+    },
+    {
+      "id": "static_stack_architecture",
+      "label": "No-Framework Static Stack (styles.css, projects.js, script.js on GitHub Pages)",
+      "nodes": [
+        "styles_styles_css",
+        "projects_projects_js",
+        "script_script_js",
+        "about_github_pages"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/fusion/Code/GitRepos/007575.xyz/about.html"
+    },
+    {
+      "id": "project_browsing_system",
+      "label": "Project Browsing System (search + tag filters over project data schema)",
+      "nodes": [
+        "index_search_input",
+        "index_filters_component",
+        "docs_project_entry_schema",
+        "projects_projects_js"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/Users/fusion/Code/GitRepos/007575.xyz/docs.html"
+    }
+  ],
+  "built_at_commit": "58d30614dae06be70436134518a08d75e1790c9a"
 }
